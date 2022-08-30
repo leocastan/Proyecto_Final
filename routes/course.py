@@ -111,6 +111,7 @@ def update(mongo):
         # Verifys the teacher isnt assigned
         found_teacher = courses.find_one({"teacher": teacher})
         if found_teacher != None:
+            # Verificamos si no es el mismo
             isSame = found_teacher["_id"] == id
             if isSame == False:
                 return jsonify({
